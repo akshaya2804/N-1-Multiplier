@@ -1,0 +1,9 @@
+module n_to_1_mux #(parameter N = 6, WIDTH = 4) ( 
+input [N*WIDTH-1:0] in,     
+input [$clog2(N)-1:0] sel,  
+output reg [WIDTH-1:0] out  
+); 
+always @(*) begin 
+out = in[sel*WIDTH +: WIDTH];  
+end 
+endmodule
